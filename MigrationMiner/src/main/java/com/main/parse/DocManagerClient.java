@@ -1,23 +1,17 @@
 package com.main.parse;
 
+import com.database.mysql.LibraryDocumentationDB;
+import com.database.mysql.MigrationSegments;
+import com.database.mysql.MigrationSegmentsDB;
+import com.library.Docs.MethodDocs;
+import com.library.Docs.ParseHTML;
+import com.library.source.DownloadLibrary;
+import com.segments.build.TerminalCommand;
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Scanner;
-
-import com.database.mysql.LibraryDocumentationDB;
-import com.database.mysql.MigrationRule;
-import com.database.mysql.MigrationRuleDB;
-import com.database.mysql.MigrationSegments;
-import com.database.mysql.MigrationSegmentsDB;
-import com.database.mysql.ProjectLibrariesDB;
-import com.library.Docs.MethodDocs;
-import com.library.Docs.ParseHTML;
-import com.library.lib.MethodLib;
-import com.library.source.DownloadLibrary;
-import com.project.info.Project;
-import com.segments.build.TerminalCommand;
+import java.util.concurrent.TimeUnit;
 
 /*
  * This Class collect Library docs from Maven repository then it convert it to relation database and 
@@ -85,7 +79,7 @@ public class DocManagerClient {
 		downloadLibrary.download(libraryInfo, true);
 		jar2HTML(libraryInfo);
 
-		// TODO: We distable collect library source code not needed for now
+		// TODO: We disable collect library source code not needed for now
 		// Convert jar to source code
 		// libManagerClient.jarToSourceCode(libraryInfo);
 

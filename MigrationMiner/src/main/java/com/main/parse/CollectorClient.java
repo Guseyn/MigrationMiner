@@ -54,7 +54,7 @@ public class CollectorClient {
 
 		// TODO: Search online for library migration
 		GitRepositoryManager findGoodRepositories = new GitRepositoryManager();
-		ArrayList<String> listOfGitRepositories = findGoodRepositories.getGitLinks("data/gitRepositories.csv");
+		ArrayList<String> listOfGitRepositories = findGoodRepositories.getGitLinks("/Users/guseyn/java-projects/MigrationMiner/MigrationMiner/src/resources/gitRepositories.csv");
 		int count = 1;
 		RepositoriesDB repositoriesDB = new RepositoriesDB();
 

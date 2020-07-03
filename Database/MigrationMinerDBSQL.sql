@@ -1,5 +1,6 @@
 drop database MigrationMiner;
 create database MigrationMiner;
+
 use  MigrationMiner;
 
 CREATE TABLE  Repositories (
@@ -9,8 +10,6 @@ CREATE TABLE  Repositories (
 );
 describe Repositories; 
 
- 
- 
 CREATE TABLE  ProjectLibraries  (
 	 ProjectsID 	INTEGER,
 	 CommitID 	varchar(200),
@@ -29,11 +28,7 @@ CREATE TABLE  MigrationRules  (
 	 Accuracy REAL,
 	 isVaild INTEGER DEFAULT 0
 );
-describe MigrationRules; 
-
- 
- 
-
+describe MigrationRules;
  
 create table MigrationSegments
 (
@@ -48,9 +43,6 @@ create table MigrationSegments
 );
 describe MigrationSegments; 
 
- 
-
- 
 CREATE TABLE  AppCommits  (
 	 AppID 	INTEGER,
 	 CommitID 	varchar(200),
@@ -59,9 +51,6 @@ CREATE TABLE  AppCommits  (
 	 CommitText 	TEXT
 );
 describe AppCommits; 
- 
-
- 
 
 CREATE TABLE  LibraryDocumentation  (
 	 LibraryName 	varchar(100),
@@ -75,10 +64,7 @@ CREATE TABLE  LibraryDocumentation  (
 );
 describe LibraryDocumentation; 
  
-
- 
-
- CREATE VIEW ProjectLibrariesView
+CREATE VIEW ProjectLibrariesView
   as
 SELECT ProjectsID,CommitID,
    LibraryName, isAdded,PomPath

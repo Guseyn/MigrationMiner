@@ -117,8 +117,8 @@ public class MigrationRulesClient {
 
 		Double threeShold = 1.0;
 		int frequency = 1; // number of times we see that relation //TODO: update to 3 as min
-		int numberOfTureMigrationRules = 0;
-		int numberOfTureUpgradeRules = 0;
+		int numberOfTrueMigrationRules = 0;
+		int numberOfTrueUpgradeRules = 0;
 		int numberOfFalseRules = 0;
 		StringBuilder upgrades = new StringBuilder();
 		StringBuilder migrations = new StringBuilder();
@@ -146,7 +146,7 @@ public class MigrationRulesClient {
 							+ cpObject.Frequency + "| Ratio:" + cpObject.Accuracy * 100 + "%|");
 					migrations.append("\n");
 
-					numberOfTureMigrationRules++;
+					numberOfTrueMigrationRules++;
 					// TODO: return back
 					migrationRule.addMigrationRule(cpObject.value1, cpObject.value2, cpObject.Frequency,
 							cpObject.Accuracy * 100);
@@ -154,7 +154,7 @@ public class MigrationRulesClient {
 					upgrades.append(cpObject.value1 + " <======> " + cpObject.value2 + "\t| frequency:"
 							+ cpObject.Frequency + "| Ratio:" + cpObject.Accuracy * 100 + "%|");
 					upgrades.append("\n");
-					numberOfTureUpgradeRules++;
+					numberOfTrueUpgradeRules++;
 					// TODO: return back
 					migrationRule.addMigrationRule(cpObject.value1, cpObject.value2, cpObject.Frequency,
 							cpObject.Accuracy * 100);
@@ -177,12 +177,12 @@ public class MigrationRulesClient {
 		System.err.println("************* Summary Report **************");
 		System.err.println("**************************************");
 		System.err.println("With threeShold: " + threeShold + "\nTotal Migrations: " + listOfFilterLibraries.size()
-				+ "\nTrue Rules:" + (numberOfTureMigrationRules + numberOfTureUpgradeRules) + " (Migration:"
-				+ numberOfTureMigrationRules + ", Upgrade:" + numberOfTureUpgradeRules + ")\nFalse Rules:"
+				+ "\nTrue Rules:" + (numberOfTrueMigrationRules + numberOfTrueUpgradeRules) + " (Migration:"
+				+ numberOfTrueMigrationRules + ", Upgrade:" + numberOfTrueUpgradeRules + ")\nFalse Rules:"
 				+ numberOfFalseRules);
 		System.err.println("**************************************\n");
 		System.out.println("Note: In some cases we cannot find library if isnot hosted in MVN repositories\n"
-				+ "If you want to integrate that type of library you need to add in foler 'jar' in our project before run this file");
+				+ "If you want to integrate that type of library you need to add in folder 'jar' in our project before run this file");
 	}
 
 	// Check if the two commit are done in sequence one after another

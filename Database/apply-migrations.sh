@@ -1,0 +1,1 @@
+ docker exec -i ae1ed4a63481 sh -c 'exec mysql -uroot -p"example"' < Database/MigrationMinerDBSQL.sql
